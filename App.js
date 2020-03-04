@@ -1,8 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+
 import {AppLoading} from 'expo';
- import * as Font from 'expo-font';
-import {IonIcons} from '@expo/vector-icons';
+import * as Font from 'expo-font';
+import {Ionicons} from '@expo/vector-icons';
+import MainNavigation from './navigation/MainNavigation';
+import {StatusBar} from 'react-native';
 
 export default class App extends React.Component {
   state = {
@@ -27,20 +29,13 @@ export default class App extends React.Component {
 
     
     return (
-      loaded ? <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+      loaded ? 
+        <><StatusBar barStyle="light-content"/><MainNavigation/></>
+  
       : <AppLoading startAsync={this.loadAssets} onFinish={this.handleLoaded} onError={this.handleError}/>
     );
   
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
