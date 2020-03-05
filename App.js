@@ -20,7 +20,7 @@ export default class App extends React.Component {
   }
 
   loadAssets = async()=>{
-    await Font.loadSync({
+    await Font.loadAsync({
       ...Ionicons.font
     })
   }
